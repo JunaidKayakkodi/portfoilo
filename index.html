@@ -43,10 +43,11 @@
                 <div class="flex-shrink-0 flex items-center">
                     <a href="#" class="text-xl font-bold text-primary tracking-tight">JUNAID.</a>
                 </div>
-                <div class="hidden md:flex space-x-8">
+                <div class="hidden lg:flex space-x-8">
                     <a href="#about" class="text-sm font-medium text-slate-600 hover:text-primary transition-colors">About</a>
                     <a href="#skills" class="text-sm font-medium text-slate-600 hover:text-primary transition-colors">Skills</a>
                     <a href="#experience" class="text-sm font-medium text-slate-600 hover:text-primary transition-colors">Experience</a>
+                    <a href="#projects" class="text-sm font-medium text-slate-600 hover:text-primary transition-colors">Projects</a>
                     <a href="#education" class="text-sm font-medium text-slate-600 hover:text-primary transition-colors">Education</a>
                 </div>
                 <div class="flex items-center space-x-4">
@@ -65,7 +66,7 @@
     <section id="hero" class="relative bg-white overflow-hidden pt-16 pb-20 lg:pt-24 lg:pb-28">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative">
             <div class="text-center md:text-left flex flex-col md:flex-row items-center gap-12">
-                <!-- Profile Image loading directly from Github -->
+                <!-- Profile Image -->
                 <img src="profile.jpg" alt="Junaid Profile Photo" class="w-40 h-40 md:w-48 md:h-48 rounded-full border-4 border-white shadow-xl flex-shrink-0 object-cover">
                 
                 <div class="flex-1">
@@ -76,7 +77,7 @@
                         Educator | Office Administrator | Islamic Scholar
                     </h2>
                     
-                    <div class="flex flex-col sm:flex-row flex-wrap items-center md:items-start justify-center md:justify-start gap-4 text-slate-600 mb-8">
+                    <div class="flex flex-col sm:flex-row flex-wrap items-center md:items-start justify-center md:justify-start gap-4 text-slate-600 mb-4">
                         <div class="flex items-center">
                             <i data-lucide="map-pin" class="w-5 h-5 mr-2 text-primary"></i>
                             Kozhikode, Kerala, India
@@ -92,13 +93,23 @@
                             <a href="tel:+919645555771" class="hover:text-primary transition-colors">+91 964 5555 771</a>
                         </div>
                     </div>
+
+                    <!-- Social Links -->
+                    <div class="flex items-center justify-center md:justify-start space-x-5 mb-8 no-print">
+                        <a href="https://www.linkedin.com/in/junaid-kayakkodi-1789b5291" target="_blank" class="text-slate-400 hover:text-[#0a66c2] transition-colors" aria-label="LinkedIn">
+                            <i data-lucide="linkedin" class="w-6 h-6"></i>
+                        </a>
+                        <a href="https://www.instagram.com/abd_kv" target="_blank" class="text-slate-400 hover:text-[#E1306C] transition-colors" aria-label="Instagram">
+                            <i data-lucide="instagram" class="w-6 h-6"></i>
+                        </a>
+                    </div>
                     
                     <div class="flex justify-center md:justify-start space-x-4 no-print">
                         <a href="#contact" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-slate-900 hover:bg-slate-800 transition-colors">
                             Contact Me
                         </a>
-                        <a href="#experience" class="inline-flex items-center px-6 py-3 border border-slate-300 text-base font-medium rounded-md text-slate-700 bg-white hover:bg-slate-50 transition-colors">
-                            View Experience
+                        <a href="#projects" class="inline-flex items-center px-6 py-3 border border-slate-300 text-base font-medium rounded-md text-slate-700 bg-white hover:bg-slate-50 transition-colors">
+                            View Projects
                         </a>
                     </div>
                 </div>
@@ -298,8 +309,44 @@
         </div>
     </section>
 
+    <!-- Projects Section -->
+    <section id="projects" class="py-16 bg-white border-t border-slate-200">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-slate-900 mb-2">Projects & Developments</h2>
+                <div class="w-16 h-1 bg-primary mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Project 1 -->
+                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-all duration-300">
+                    <div class="p-3 bg-blue-100 w-12 h-12 rounded-xl text-primary mb-6 flex items-center justify-center">
+                        <i data-lucide="monitor" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Online Result Portal</h3>
+                    <p class="text-sm font-semibold text-primary mb-4">HIM Orkkatteri</p>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Developed and deployed a custom online data management and exam results tracking system tailored for institutional evaluation, allowing streamlined grading processes and digital record-keeping.
+                    </p>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-all duration-300">
+                    <div class="p-3 bg-blue-100 w-12 h-12 rounded-xl text-primary mb-6 flex items-center justify-center">
+                        <i data-lucide="book-open-check" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Arabic Curriculum & E-Learning</h3>
+                    <p class="text-sm font-semibold text-primary mb-4">Alwan Value School</p>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Designed a comprehensive Arabic language curriculum and authored specialized online learning materials focused on engaging primary students and fostering early language acquisition.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Education Section -->
-    <section id="education" class="py-16 bg-white border-t border-slate-200">
+    <section id="education" class="py-16 bg-slate-50 border-t border-slate-200">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
                 <h2 class="text-3xl font-bold text-slate-900 mb-2">Education & Certifications</h2>
@@ -312,14 +359,14 @@
                     <h3 class="text-xl font-bold text-slate-800 mb-6 flex items-center">
                         <i data-lucide="graduation-cap" class="w-6 h-6 mr-2 text-primary"></i> Academic Degrees
                     </h3>
-                    <div class="space-y-6 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-slate-200 before:to-transparent">
+                    <div class="space-y-6 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-slate-300 before:to-transparent">
                         
                         <!-- Ed Item -->
                         <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
-                            <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-white bg-blue-100 text-primary shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+                            <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-slate-50 bg-blue-100 text-primary shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
                                 <i data-lucide="book" class="w-4 h-4"></i>
                             </div>
-                            <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-slate-50 p-4 rounded-xl border border-slate-100 shadow-sm">
+                            <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
                                 <span class="text-xs font-semibold text-primary mb-1 block">Expected 2027</span>
                                 <h4 class="font-bold text-slate-800">B.Ed. in English (Ongoing)</h4>
                                 <p class="text-sm text-slate-500">JJ College of Education, Ammapettai</p>
@@ -328,34 +375,44 @@
 
                         <!-- Ed Item -->
                         <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
-                            <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-white bg-blue-100 text-primary shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+                            <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-slate-50 bg-blue-100 text-primary shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
                                 <i data-lucide="award" class="w-4 h-4"></i>
                             </div>
-                            <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-slate-50 p-4 rounded-xl border border-slate-100 shadow-sm">
+                            <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
                                 <span class="text-xs font-semibold text-primary mb-1 block">2024 - 2026</span>
                                 <h4 class="font-bold text-slate-800">M.A. in Arabic</h4>
                                 <p class="text-sm text-slate-500">IGNOU</p>
                             </div>
                         </div>
 
-                        <!-- Ed Item -->
+                        <!-- Ed Item (Wafy with Dissertation) -->
                         <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
-                            <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-white bg-blue-100 text-primary shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+                            <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-slate-50 bg-blue-100 text-primary shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
                                 <i data-lucide="book-open" class="w-4 h-4"></i>
                             </div>
-                            <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-slate-50 p-4 rounded-xl border border-slate-100 shadow-sm">
+                            <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
                                 <span class="text-xs font-semibold text-primary mb-1 block">2023 - 2025</span>
                                 <h4 class="font-bold text-slate-800">Masters in Islamic Theology (Wafy)</h4>
-                                <p class="text-sm text-slate-500">Wafy Campus, Kalikavu</p>
+                                <p class="text-sm text-slate-500 mb-3">Wafy Campus, Kalikavu</p>
+                                
+                                <div class="bg-blue-50 border border-blue-100 rounded-lg p-3 relative">
+                                    <div class="flex items-center gap-2 mb-1">
+                                        <i data-lucide="scroll-text" class="w-3.5 h-3.5 text-blue-600"></i>
+                                        <p class="text-xs font-bold text-blue-800 uppercase tracking-wide">PG Dissertation</p>
+                                    </div>
+                                    <p class="text-xs text-blue-900 italic leading-relaxed">
+                                        "An Analytical Study on Sheikh Ahmad Sirhindi's Contributions in Promoting Ahlu-Sunnah and Preventing Spread of Shi'ism in India."
+                                    </p>
+                                </div>
                             </div>
                         </div>
 
                         <!-- Ed Item -->
                         <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
-                            <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-white bg-blue-100 text-primary shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+                            <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-slate-50 bg-blue-100 text-primary shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
                                 <i data-lucide="award" class="w-4 h-4"></i>
                             </div>
-                            <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-slate-50 p-4 rounded-xl border border-slate-100 shadow-sm">
+                            <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
                                 <span class="text-xs font-semibold text-primary mb-1 block">2021 - 2024</span>
                                 <h4 class="font-bold text-slate-800">B.A. in English Lang & Lit.</h4>
                                 <p class="text-sm text-slate-500">University of Calicut</p>
@@ -373,7 +430,7 @@
                     <div class="grid grid-cols-1 gap-4">
                         <!-- Cert Card -->
                         <div class="bg-white p-5 rounded-xl border border-slate-200 hover:border-blue-300 transition-colors flex items-start">
-                            <div class="p-2 bg-slate-100 rounded text-slate-600 mr-4 mt-1"><i data-lucide="scroll" class="w-5 h-5"></i></div>
+                            <div class="p-2 bg-slate-50 rounded text-slate-600 mr-4 mt-1"><i data-lucide="scroll" class="w-5 h-5"></i></div>
                             <div>
                                 <h4 class="font-bold text-slate-800">Aliya Certificate (Undergrad)</h4>
                                 <p class="text-sm text-slate-600">Islamic & Arabic Studies, MTM College</p>
@@ -383,7 +440,7 @@
 
                         <!-- Cert Card -->
                         <div class="bg-white p-5 rounded-xl border border-slate-200 hover:border-blue-300 transition-colors flex items-start">
-                            <div class="p-2 bg-slate-100 rounded text-slate-600 mr-4 mt-1"><i data-lucide="languages" class="w-5 h-5"></i></div>
+                            <div class="p-2 bg-slate-50 rounded text-slate-600 mr-4 mt-1"><i data-lucide="languages" class="w-5 h-5"></i></div>
                             <div>
                                 <h4 class="font-bold text-slate-800">Diploma in Functional Arabic</h4>
                                 <p class="text-sm text-slate-600">NCPUL</p>
@@ -393,7 +450,7 @@
 
                         <!-- Cert Card -->
                         <div class="bg-white p-5 rounded-xl border border-slate-200 hover:border-blue-300 transition-colors flex items-start">
-                            <div class="p-2 bg-slate-100 rounded text-slate-600 mr-4 mt-1"><i data-lucide="languages" class="w-5 h-5"></i></div>
+                            <div class="p-2 bg-slate-50 rounded text-slate-600 mr-4 mt-1"><i data-lucide="languages" class="w-5 h-5"></i></div>
                             <div>
                                 <h4 class="font-bold text-slate-800">Diploma in Urdu Language</h4>
                                 <p class="text-sm text-slate-600">NCPUL</p>
@@ -403,7 +460,7 @@
 
                          <!-- Cert Card -->
                          <div class="bg-white p-5 rounded-xl border border-slate-200 hover:border-blue-300 transition-colors flex items-start">
-                            <div class="p-2 bg-slate-100 rounded text-slate-600 mr-4 mt-1"><i data-lucide="building" class="w-5 h-5"></i></div>
+                            <div class="p-2 bg-slate-50 rounded text-slate-600 mr-4 mt-1"><i data-lucide="building" class="w-5 h-5"></i></div>
                             <div>
                                 <h4 class="font-bold text-slate-800">HSE Commerce</h4>
                                 <p class="text-sm text-slate-600">RVHSS Chokli</p>
@@ -423,6 +480,16 @@
                 <div class="mb-6 md:mb-0 text-center md:text-left">
                     <span class="text-2xl font-bold tracking-tight text-white block mb-2">JUNAID.</span>
                     <p class="text-slate-400 text-sm">Educator | Administrator | Scholar</p>
+                    
+                    <!-- Footer Social Links -->
+                    <div class="flex items-center justify-center md:justify-start space-x-4 mt-4">
+                        <a href="https://www.linkedin.com/in/junaid-kayakkodi-1789b5291" target="_blank" class="text-slate-400 hover:text-white transition-colors">
+                            <i data-lucide="linkedin" class="w-5 h-5"></i>
+                        </a>
+                        <a href="https://www.instagram.com/abd_kv" target="_blank" class="text-slate-400 hover:text-white transition-colors">
+                            <i data-lucide="instagram" class="w-5 h-5"></i>
+                        </a>
+                    </div>
                 </div>
                 
                 <div class="flex flex-col items-center md:items-end space-y-3">
