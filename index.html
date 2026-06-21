@@ -3,12 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Junaid | Creative Professional Portfolio</title>
-    <!-- Favicon link pointing to your profile photo -->
-    <link rel="icon" type="image/jpeg" href="profile.jpg">
+    <title>Junaid | Creative Portfolio</title>
     
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="https://drive.google.com/uc?export=view&id=1ztHWvJM5JaE-KyCNQEUIHywu3q47mhIT">
+    
+    <!-- External Libraries -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Premium Editorial Typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
@@ -26,15 +30,8 @@
                             50: '#eef2ff',
                             100: '#e0e7ff',
                             500: '#6366f1',
-                            600: '#4f46e5', // Deep Indigo
+                            600: '#4f46e5',
                             900: '#312e81',
-                            950: '#1e1b4b',
-                        },
-                        surface: {
-                            50: '#fafafa',
-                            100: '#f4f4f5',
-                            800: '#27272a',
-                            900: '#18181b',
                         }
                     },
                     animation: {
@@ -53,418 +50,397 @@
         }
     </script>
     <style>
-        /* Custom styles for print media and translation widget */
+        /* Custom Print Media Styles for clean physical CVs */
         @media print {
-            nav, .no-print, .bg-blob { display: none !important; }
-            body { background-color: white !important; color: black !important; }
-            section { page-break-inside: avoid; padding: 1rem 0 !important; }
-            .shadow-sm, .shadow-md, .shadow-xl { box-shadow: none !important; border: 1px solid #e4e4e7; }
+            nav, .no-print, .bg-blobs { display: none !important; }
+            body { background: white !important; color: black !important; overflow: visible !important; }
+            section { page-break-inside: avoid; padding: 1.5rem 0 !important; }
+            .glass-card { box-shadow: none !important; border: 1px solid #e2e8f0 !important; background: white !important; filter: none !important; }
+            .text-gradient { background: none !important; -webkit-text-fill-color: black !important; color: black !important; }
         }
-        .goog-te-banner-frame.skiptranslate { display: none !important; }
-        body { top: 0px !important; }
-        #google_translate_element select {
-            background-color: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(10px);
-            border: 1px solid #e4e4e7;
-            border-radius: 9999px;
-            padding: 0.375rem 0.75rem;
-            font-size: 0.75rem;
-            font-weight: 500;
-            color: #27272a;
-            outline: none;
-            cursor: pointer;
-            transition: all 0.2s;
-        }
-        #google_translate_element select:hover { border-color: #6366f1; }
         
-        /* Premium custom scrollbar */
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #fafafa; }
-        ::-webkit-scrollbar-thumb { background: #d4d4d8; border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: #a1a1aa; }
-        
+        /* Glassmorphism & UI Utilities */
         .glass-card {
             background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
             border: 1px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 10px 40px -10px rgba(0,0,0,0.05);
+        }
+
+        .text-gradient {
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .animation-delay-2000 { animation-delay: 2s; }
+        .animation-delay-4000 { animation-delay: 4s; }
+        
+        /* Experience Timeline Line */
+        .timeline-line::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 1.25rem; /* Matches the center of the icon */
+            width: 2px;
+            background: #e0e7ff;
+            z-index: 0;
+        }
+        @media (max-width: 768px) {
+            .timeline-line::before { left: 1rem; }
         }
     </style>
 </head>
-<body class="bg-surface-50 text-surface-800 font-sans antialiased selection:bg-brand-500 selection:text-white select-none relative overflow-x-hidden">
+<body class="bg-slate-50 text-slate-700 font-sans antialiased selection:bg-brand-500 selection:text-white select-none relative overflow-x-hidden">
 
-    <!-- Background Animated Blobs -->
-    <div class="fixed inset-0 z-[-1] overflow-hidden pointer-events-none bg-blob no-print">
-        <div class="absolute top-0 -left-4 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-2xl opacity-30 animate-blob"></div>
-        <div class="absolute top-0 -right-4 w-72 h-72 bg-brand-300 rounded-full mix-blend-multiply filter blur-2xl opacity-30 animate-blob animation-delay-2000"></div>
-        <div class="absolute -bottom-8 left-20 w-72 h-72 bg-blue-300 rounded-full mix-blend-multiply filter blur-2xl opacity-30 animate-blob animation-delay-4000"></div>
+    <!-- Ambient Background Blobs -->
+    <div class="bg-blobs absolute top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
+        <div class="absolute top-[-5%] left-[-10%] w-72 md:w-96 h-72 md:h-96 bg-brand-100 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob"></div>
+        <div class="absolute top-[10%] right-[-5%] w-72 md:w-96 h-72 md:h-96 bg-purple-100 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-2000"></div>
+        <div class="absolute top-[20%] left-[20%] w-72 md:w-96 h-72 md:h-96 bg-pink-100 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-4000"></div>
     </div>
 
     <!-- Navigation -->
-    <nav class="fixed top-4 inset-x-0 z-50 mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 transition-all duration-300 no-print">
-        <div class="glass-card rounded-2xl shadow-sm px-4 py-3 flex justify-between items-center">
-            <div class="flex-shrink-0 flex items-center">
-                <a href="#" class="text-xl font-heading font-extrabold text-surface-900 tracking-tight">JUNAID<span class="text-brand-600">.</span></a>
-            </div>
-            <div class="hidden md:flex space-x-6 items-center bg-white/50 px-4 py-2 rounded-full border border-surface-100">
-                <a href="#about" class="text-sm font-medium text-surface-600 hover:text-brand-600 transition-colors">About</a>
-                <a href="#expertise" class="text-sm font-medium text-surface-600 hover:text-brand-600 transition-colors">Expertise</a>
-                <a href="#journey" class="text-sm font-medium text-surface-600 hover:text-brand-600 transition-colors">Journey</a>
-                <a href="#achievements" class="text-sm font-medium text-surface-600 hover:text-brand-600 transition-colors">Achievements</a>
-            </div>
-            <div class="flex items-center space-x-3">
-                <div id="google_translate_element" class="hidden sm:block"></div>
-                <button onclick="window.print()" class="hidden md:flex items-center justify-center p-2 rounded-full bg-white border border-surface-200 text-surface-600 hover:text-brand-600 hover:border-brand-300 transition-all" aria-label="Print CV">
-                    <i data-lucide="printer" class="w-4 h-4"></i>
-                </button>
-                <a href="mailto:abdjunaidkv@gmail.com" class="inline-flex items-center justify-center px-5 py-2 rounded-full text-sm font-semibold text-white bg-surface-900 hover:bg-brand-600 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5">
-                    Let's Talk
-                </a>
+    <nav class="sticky top-0 z-50 glass-card transition-all duration-300">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="#" class="text-2xl font-heading font-extrabold text-brand-900 tracking-tight">JUNAID.</a>
+                </div>
+                <div class="hidden lg:flex space-x-8">
+                    <a href="#about" class="text-sm font-medium text-slate-600 hover:text-brand-600 transition-colors">Philosophy</a>
+                    <a href="#skills" class="text-sm font-medium text-slate-600 hover:text-brand-600 transition-colors">Expertise</a>
+                    <a href="#experience" class="text-sm font-medium text-slate-600 hover:text-brand-600 transition-colors">Journey</a>
+                    <a href="#education" class="text-sm font-medium text-slate-600 hover:text-brand-600 transition-colors">Academics</a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button onclick="window.print()" class="hidden md:flex items-center text-sm font-medium text-slate-500 hover:text-brand-600 transition-colors no-print px-3 py-2 rounded-lg hover:bg-slate-100">
+                        <i data-lucide="printer" class="w-4 h-4 mr-2"></i> Print Profile
+                    </button>
+                    <a href="mailto:abdjunaidkv@gmail.com" class="inline-flex items-center justify-center px-5 py-2.5 rounded-full shadow-md text-sm font-medium text-white bg-brand-600 hover:bg-brand-900 transition-all duration-300 no-print">
+                        Let's Talk
+                    </a>
+                </div>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="hero" class="relative pt-32 pb-20 lg:pt-48 lg:pb-32">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-            <div class="flex flex-col-reverse lg:flex-row items-center justify-between gap-12 lg:gap-8">
+    <section id="hero" class="relative pt-20 pb-24 lg:pt-32 lg:pb-32 overflow-hidden">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
                 
-                <div class="flex-1 text-center lg:text-left mt-8 lg:mt-0">
-                    <div class="inline-flex items-center px-3 py-1.5 rounded-full bg-brand-50 border border-brand-100 text-brand-600 text-xs font-bold tracking-wide uppercase mb-6 shadow-sm">
-                        <span class="w-2 h-2 rounded-full bg-brand-500 mr-2 animate-pulse"></span>
-                        Available for new opportunities
-                    </div>
-                    <h1 class="text-5xl md:text-6xl lg:text-7xl font-heading font-extrabold text-surface-900 leading-[1.1] mb-6 tracking-tight">
-                        Crafting words, <br class="hidden lg:block" />systems, and <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-purple-600">minds.</span>
+                <!-- Profile Image -->
+                <div class="relative group">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-brand-500 to-purple-600 rounded-full blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
+                    <img src="https://drive.google.com/uc?export=view&id=1ztHWvJM5JaE-KyCNQEUIHywu3q47mhIT" alt="Junaid Profile Photo" class="relative w-48 h-48 lg:w-64 lg:h-64 rounded-full border-4 border-white shadow-2xl flex-shrink-0 object-cover">
+                </div>
+                
+                <div class="flex-1 text-center lg:text-left">
+                    <h1 class="text-5xl lg:text-7xl font-heading font-extrabold tracking-tight text-slate-900 mb-6">
+                        Hello. I'm <span class="text-gradient bg-gradient-to-r from-brand-600 to-purple-600">Junaid</span>
                     </h1>
-                    <p class="text-lg md:text-xl text-surface-600 mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-                        I bridge the gap between traditional education and modern digital strategy.
-                        <br class="hidden md:block"/>
-                        <span class="font-medium text-surface-800">Educator | Digital Operations & PRO | Content Strategist</span>
-                    </p>
                     
-                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 mb-10 no-print">
-                        <a href="https://www.linkedin.com/in/junaid-kayakkodi-1789b5291" target="_blank" class="flex items-center justify-center w-12 h-12 rounded-full bg-white border border-surface-200 text-surface-600 hover:text-[#0a66c2] hover:border-[#0a66c2] hover:shadow-md transition-all duration-300" aria-label="LinkedIn">
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-                        </a>
-                        <a href="https://www.instagram.com/abd_kv" target="_blank" class="flex items-center justify-center w-12 h-12 rounded-full bg-white border border-surface-200 text-surface-600 hover:text-[#E1306C] hover:border-[#E1306C] hover:shadow-md transition-all duration-300" aria-label="Instagram">
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd"/></svg>
-                        </a>
-                        <a href="https://wa.me/919645555771" target="_blank" class="flex items-center justify-center w-12 h-12 rounded-full bg-white border border-surface-200 text-surface-600 hover:text-[#25D366] hover:border-[#25D366] hover:shadow-md transition-all duration-300" aria-label="WhatsApp">
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                        </a>
-                        
-                        <div class="h-8 w-px bg-surface-200 mx-2 hidden sm:block"></div>
-                        
-                        <div class="flex items-center text-sm font-medium text-surface-600 bg-white px-4 py-2.5 rounded-full border border-surface-200 shadow-sm">
-                            <i data-lucide="map-pin" class="w-4 h-4 mr-2 text-brand-600"></i> Kozhikode, Kerala
+                    <!-- Dynamic Role Badges -->
+                    <div class="flex flex-wrap justify-center lg:justify-start gap-3 mb-8">
+                        <span class="px-4 py-1.5 rounded-full bg-brand-100 text-brand-700 font-semibold text-sm border border-brand-200 shadow-sm">Educator</span>
+                        <span class="px-4 py-1.5 rounded-full bg-purple-100 text-purple-700 font-semibold text-sm border border-purple-200 shadow-sm">Digital Operations & PRO</span>
+                        <span class="px-4 py-1.5 rounded-full bg-pink-100 text-pink-700 font-semibold text-sm border border-pink-200 shadow-sm">Content Strategist & Editor</span>
+                    </div>
+                    
+                    <!-- Contact Info -->
+                    <div class="flex flex-col sm:flex-row flex-wrap items-center justify-center lg:justify-start gap-4 text-slate-500 mb-8 font-medium">
+                        <div class="flex items-center"><i data-lucide="map-pin" class="w-4 h-4 mr-2 text-brand-500"></i> Kozhikode, Kerala</div>
+                        <div class="hidden sm:block text-slate-300">•</div>
+                        <div class="flex items-center"><i data-lucide="mail" class="w-4 h-4 mr-2 text-brand-500"></i> <a href="mailto:abdjunaidkv@gmail.com" class="hover:text-brand-600 transition-colors">abdjunaidkv@gmail.com</a></div>
+                        <div class="hidden sm:block text-slate-300">•</div>
+                        <div class="flex items-center"><i data-lucide="phone" class="w-4 h-4 mr-2 text-brand-500"></i> <a href="tel:+919645555771" class="hover:text-brand-600 transition-colors">+91 964 5555 771</a></div>
+                    </div>
+
+                    <!-- Action Links & Socials -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-6 no-print">
+                        <div class="flex space-x-4">
+                            <a href="https://www.linkedin.com/in/junaid-kayakkodi-1789b5291" target="_blank" class="w-12 h-12 flex items-center justify-center rounded-full bg-white shadow-sm border border-slate-200 text-slate-500 hover:text-[#0a66c2] hover:shadow-md hover:border-[#0a66c2]/30 transition-all" aria-label="LinkedIn">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                            </a>
+                            <a href="https://www.instagram.com/abd_kv" target="_blank" class="w-12 h-12 flex items-center justify-center rounded-full bg-white shadow-sm border border-slate-200 text-slate-500 hover:text-[#E1306C] hover:shadow-md hover:border-[#E1306C]/30 transition-all" aria-label="Instagram">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd"/></svg>
+                            </a>
+                            <a href="https://wa.me/919645555771" target="_blank" class="w-12 h-12 flex items-center justify-center rounded-full bg-white shadow-sm border border-slate-200 text-slate-500 hover:text-[#25D366] hover:shadow-md hover:border-[#25D366]/30 transition-all" aria-label="WhatsApp">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                            </a>
                         </div>
-                    </div>
-                </div>
-
-                <!-- Artistic Profile Image Layout -->
-                <div class="relative flex-shrink-0 w-56 h-56 md:w-72 md:h-72 lg:w-80 lg:h-80">
-                    <div class="absolute inset-0 bg-gradient-to-tr from-brand-500 to-purple-400 rounded-3xl transform rotate-6 scale-105 opacity-20 transition-transform hover:rotate-12 duration-500"></div>
-                    <div class="absolute inset-0 bg-white rounded-3xl transform -rotate-3 border border-surface-200 shadow-xl overflow-hidden">
-                        <img src="profile.jpg" alt="Junaid Profile Photo" class="w-full h-full object-cover">
+                        <a href="#projects" class="hidden sm:inline-flex items-center font-medium text-slate-600 hover:text-brand-600 transition-colors">
+                            Explore my work <i data-lucide="arrow-right" class="w-4 h-4 ml-1 mt-0.5"></i>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Editorial Philosophy (About) -->
-    <section id="about" class="py-20 bg-white relative z-10">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="glass-card p-10 md:p-14 rounded-3xl shadow-sm border border-surface-100 relative overflow-hidden group">
-                <div class="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity duration-500">
-                    <i data-lucide="quote" class="w-32 h-32 text-brand-600"></i>
-                </div>
-                
-                <h2 class="text-xs font-bold tracking-widest text-brand-600 uppercase mb-4">Professional Philosophy</h2>
-                <h3 class="text-2xl md:text-3xl font-heading font-bold text-surface-900 mb-6 leading-snug">
-                    I believe in the power of structured knowledge, compelling narratives, and efficient digital systems.
-                </h3>
-                
-                <div class="prose prose-lg text-surface-600 max-w-none print-text-sm">
-                    <p class="mb-4">
-                        I am a versatile and highly organized professional with a robust background encompassing multilingual academic instruction, digital operations, public relations, and creative content strategy. My career is defined by a proven track record in managing digital systems, orchestrating AI-driven administrative workflows, and maintaining precise organizational accounting.
-                    </p>
-                    <p>
-                        Beyond administration, I am highly adept at curating impactful media content and spearheading comprehensive editorial projects. I bring together technical management, creative writing, and strategic communication to drive efficiency and holistic growth in fast-paced corporate and academic settings.
-                    </p>
-                </div>
-            </div>
+    <!-- Editorial Summary -->
+    <section id="about" class="py-20 bg-white relative">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-sm font-bold text-brand-600 tracking-widest uppercase mb-6">Professional Philosophy</h2>
+            <p class="text-xl md:text-2xl font-light text-slate-700 leading-relaxed tracking-wide">
+                A dynamic blend of academic depth and digital fluency. I combine a rigorous foundation in <span class="font-semibold text-slate-900">Islamic theology and multilingual instruction</span> with modern expertise in <span class="font-semibold text-slate-900">digital operations, public relations, and content strategy</span>. Whether I am curating an engaging curriculum, optimizing administrative workflows with AI, or shaping the editorial direction for state-level conferences, I bring precision, creativity, and purposeful leadership to every endeavor.
+            </p>
         </div>
     </section>
 
-    <!-- Expertise (Bento Grid) -->
-    <section id="expertise" class="py-24 bg-surface-50 border-t border-surface-200">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Expertise Bento Grid -->
+    <section id="skills" class="py-20 bg-slate-50 border-t border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="mb-16">
-                <h2 class="text-xs font-bold tracking-widest text-brand-600 uppercase mb-2">My Arsenal</h2>
-                <h3 class="text-3xl md:text-4xl font-heading font-extrabold text-surface-900">Core Expertise</h3>
+                <h2 class="text-3xl md:text-4xl font-heading font-extrabold text-slate-900">Core Expertise.</h2>
+                <p class="text-slate-500 mt-2 text-lg">The three pillars driving my professional methodology.</p>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-12 gap-6 auto-rows-[minmax(180px,auto)]">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
                 
-                <!-- Pillar 1: Digital Ops & PR (Spans 8 columns on large screens) -->
-                <div class="md:col-span-12 lg:col-span-8 bg-white rounded-3xl p-8 border border-surface-200 shadow-sm hover:shadow-md transition-shadow group relative overflow-hidden">
-                    <div class="absolute -right-10 -top-10 w-40 h-40 bg-brand-50 rounded-full blur-3xl group-hover:bg-brand-100 transition-colors"></div>
-                    <div class="relative z-10 flex flex-col h-full justify-between">
-                        <div class="mb-6">
-                            <div class="w-12 h-12 bg-brand-100 text-brand-600 rounded-2xl flex items-center justify-center mb-5">
-                                <i data-lucide="cpu" class="w-6 h-6"></i>
-                            </div>
-                            <h4 class="text-2xl font-heading font-bold text-surface-900 mb-2">Digital Operations & PR</h4>
-                            <p class="text-surface-500 text-sm">Orchestrating modern workflows, public relations, and financial systems.</p>
-                        </div>
-                        <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-surface-700 font-medium">
-                            <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 text-brand-500 mr-2"></i> AI Tools & Ed-Tech Integration</li>
-                            <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 text-brand-500 mr-2"></i> Public Relations & Speaking</li>
-                            <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 text-brand-500 mr-2"></i> Social Media & Branding</li>
-                            <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 text-brand-500 mr-2"></i> Tally Prime & Financial Admin</li>
-                            <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 text-brand-500 mr-2"></i> Digitalization & Data Systems</li>
-                        </ul>
+                <!-- Pillar 1 -->
+                <div class="glass-card rounded-3xl p-8 hover:-translate-y-1 transition-transform duration-300">
+                    <div class="w-14 h-14 rounded-2xl bg-brand-100 text-brand-600 flex items-center justify-center mb-6">
+                        <i data-lucide="graduation-cap" class="w-7 h-7"></i>
                     </div>
+                    <h3 class="font-heading font-bold text-slate-900 text-xl mb-4">Educational Pedagogy</h3>
+                    <ul class="space-y-3 text-slate-600">
+                        <li class="flex items-start"><i data-lucide="check" class="w-4 h-4 text-brand-500 mr-3 mt-1 shrink-0"></i> Curriculum & Lesson Design</li>
+                        <li class="flex items-start"><i data-lucide="check" class="w-4 h-4 text-brand-500 mr-3 mt-1 shrink-0"></i> Multilingual Instruction (English, Arabic, Malayalam)</li>
+                        <li class="flex items-start"><i data-lucide="check" class="w-4 h-4 text-brand-500 mr-3 mt-1 shrink-0"></i> Islamic Theology (Wafy)</li>
+                        <li class="flex items-start"><i data-lucide="check" class="w-4 h-4 text-brand-500 mr-3 mt-1 shrink-0"></i> Moral Education (Tarbiyah)</li>
+                        <li class="flex items-start"><i data-lucide="check" class="w-4 h-4 text-brand-500 mr-3 mt-1 shrink-0"></i> Student-Centric Learning</li>
+                    </ul>
                 </div>
 
-                <!-- Pillar 2: Content Strategy (Spans 4 columns) -->
-                <div class="md:col-span-6 lg:col-span-4 bg-surface-900 text-white rounded-3xl p-8 border border-surface-800 shadow-sm hover:shadow-md transition-shadow relative overflow-hidden">
-                    <div class="absolute top-0 right-0 w-full h-full bg-gradient-to-br from-transparent to-brand-900/50"></div>
-                    <div class="relative z-10">
-                        <div class="w-12 h-12 bg-white/10 text-white rounded-2xl flex items-center justify-center mb-5 backdrop-blur-sm">
-                            <i data-lucide="pen-tool" class="w-6 h-6"></i>
-                        </div>
-                        <h4 class="text-2xl font-heading font-bold mb-4">Content Strategy</h4>
-                        <ul class="space-y-3 text-sm text-surface-300 font-medium">
-                            <li class="flex items-center"><i data-lucide="arrow-right" class="w-3.5 h-3.5 mr-2"></i> Media Strategy & Direction</li>
-                            <li class="flex items-center"><i data-lucide="arrow-right" class="w-3.5 h-3.5 mr-2"></i> Copywriting & Design</li>
-                            <li class="flex items-center"><i data-lucide="arrow-right" class="w-3.5 h-3.5 mr-2"></i> Kaviyarangu (Poetry)</li>
-                            <li class="flex items-center"><i data-lucide="arrow-right" class="w-3.5 h-3.5 mr-2"></i> Technical Editing</li>
-                            <li class="flex items-center"><i data-lucide="arrow-right" class="w-3.5 h-3.5 mr-2"></i> Media Journalism</li>
-                        </ul>
+                <!-- Pillar 2 -->
+                <div class="glass-card rounded-3xl p-8 hover:-translate-y-1 transition-transform duration-300">
+                    <div class="w-14 h-14 rounded-2xl bg-purple-100 text-purple-600 flex items-center justify-center mb-6">
+                        <i data-lucide="cpu" class="w-7 h-7"></i>
                     </div>
+                    <h3 class="font-heading font-bold text-slate-900 text-xl mb-4">Digital Operations</h3>
+                    <ul class="space-y-3 text-slate-600">
+                        <li class="flex items-start"><i data-lucide="check" class="w-4 h-4 text-purple-500 mr-3 mt-1 shrink-0"></i> AI Tools & Ed-Tech Workflow</li>
+                        <li class="flex items-start"><i data-lucide="check" class="w-4 h-4 text-purple-500 mr-3 mt-1 shrink-0"></i> Public Relations & Social Media</li>
+                        <li class="flex items-start"><i data-lucide="check" class="w-4 h-4 text-purple-500 mr-3 mt-1 shrink-0"></i> Financial Administration (Tally Prime & Excel)</li>
+                        <li class="flex items-start"><i data-lucide="check" class="w-4 h-4 text-purple-500 mr-3 mt-1 shrink-0"></i> Data Entry & Digitalization</li>
+                        <li class="flex items-start"><i data-lucide="check" class="w-4 h-4 text-purple-500 mr-3 mt-1 shrink-0"></i> Organization Management</li>
+                    </ul>
                 </div>
 
-                <!-- Pillar 3: Educational Expertise (Spans 6 columns) -->
-                <div class="md:col-span-6 lg:col-span-6 bg-white rounded-3xl p-8 border border-surface-200 shadow-sm hover:shadow-md transition-shadow">
-                    <div class="flex flex-col h-full">
-                        <div class="w-12 h-12 bg-purple-100 text-purple-600 rounded-2xl flex items-center justify-center mb-5">
-                            <i data-lucide="graduation-cap" class="w-6 h-6"></i>
-                        </div>
-                        <h4 class="text-xl font-heading font-bold text-surface-900 mb-4">Educational Instruction</h4>
-                        <div class="flex flex-wrap gap-2 mt-auto">
-                            <span class="px-3 py-1 bg-surface-100 text-surface-700 rounded-lg text-xs font-semibold">Multilingual (Eng, Ar, Mal)</span>
-                            <span class="px-3 py-1 bg-surface-100 text-surface-700 rounded-lg text-xs font-semibold">Curriculum Design</span>
-                            <span class="px-3 py-1 bg-surface-100 text-surface-700 rounded-lg text-xs font-semibold">Student-Centric Pedagogy</span>
-                            <span class="px-3 py-1 bg-surface-100 text-surface-700 rounded-lg text-xs font-semibold">Classroom Management</span>
-                        </div>
+                <!-- Pillar 3 -->
+                <div class="glass-card rounded-3xl p-8 hover:-translate-y-1 transition-transform duration-300">
+                    <div class="w-14 h-14 rounded-2xl bg-pink-100 text-pink-600 flex items-center justify-center mb-6">
+                        <i data-lucide="pen-tool" class="w-7 h-7"></i>
                     </div>
+                    <h3 class="font-heading font-bold text-slate-900 text-xl mb-4">Content Strategy</h3>
+                    <ul class="space-y-3 text-slate-600">
+                        <li class="flex items-start"><i data-lucide="check" class="w-4 h-4 text-pink-500 mr-3 mt-1 shrink-0"></i> Media Content Direction</li>
+                        <li class="flex items-start"><i data-lucide="check" class="w-4 h-4 text-pink-500 mr-3 mt-1 shrink-0"></i> Copywriting & Brochure Design</li>
+                        <li class="flex items-start"><i data-lucide="check" class="w-4 h-4 text-pink-500 mr-3 mt-1 shrink-0"></i> Creative Writing & Poetry Performance</li>
+                        <li class="flex items-start"><i data-lucide="check" class="w-4 h-4 text-pink-500 mr-3 mt-1 shrink-0"></i> Technical Editing & Proofreading</li>
+                        <li class="flex items-start"><i data-lucide="check" class="w-4 h-4 text-pink-500 mr-3 mt-1 shrink-0"></i> Journalism & Report Generation</li>
+                    </ul>
                 </div>
+            </div>
 
-                <!-- Pillar 4: Islamic Theology (Spans 6 columns) -->
-                <div class="md:col-span-6 lg:col-span-6 bg-white rounded-3xl p-8 border border-surface-200 shadow-sm hover:shadow-md transition-shadow">
-                    <div class="flex flex-col h-full">
-                        <div class="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-2xl flex items-center justify-center mb-5">
-                            <i data-lucide="book-open" class="w-6 h-6"></i>
-                        </div>
-                        <h4 class="text-xl font-heading font-bold text-surface-900 mb-4">Islamic Theology</h4>
-                        <div class="flex flex-wrap gap-2 mt-auto">
-                            <span class="px-3 py-1 bg-surface-100 text-surface-700 rounded-lg text-xs font-semibold">Wafy Curriculum</span>
-                            <span class="px-3 py-1 bg-surface-100 text-surface-700 rounded-lg text-xs font-semibold">Tarbiyah (Moral Ed)</span>
-                            <span class="px-3 py-1 bg-surface-100 text-surface-700 rounded-lg text-xs font-semibold">Values-Oriented Learning</span>
-                            <span class="px-3 py-1 bg-surface-100 text-surface-700 rounded-lg text-xs font-semibold">Academic Research</span>
-                        </div>
+            <!-- Soft Skills Cloud -->
+            <div class="mt-8 bg-white p-8 rounded-3xl border border-slate-100 shadow-sm flex flex-col md:flex-row gap-8 items-start md:items-center">
+                <div class="shrink-0 flex items-center">
+                    <div class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center mr-4">
+                        <i data-lucide="fingerprint" class="w-5 h-5 text-slate-600"></i>
                     </div>
+                    <h3 class="font-heading font-bold text-slate-900 text-lg">Professional Traits</h3>
                 </div>
-
-                <!-- Soft Skills Banner (Spans full width) -->
-                <div class="md:col-span-12 bg-white rounded-3xl p-6 md:p-8 border border-surface-200 shadow-sm flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-                    <div class="flex-shrink-0 flex items-center">
-                        <div class="w-10 h-10 rounded-full bg-brand-100 text-brand-600 flex items-center justify-center mr-4">
-                            <i data-lucide="zap" class="w-5 h-5"></i>
-                        </div>
-                        <h4 class="text-lg font-heading font-bold text-surface-900">Professional Attributes</h4>
-                    </div>
-                    <div class="flex flex-wrap items-center justify-end gap-2">
-                        <span class="px-3 py-1.5 bg-white border border-surface-200 text-surface-700 rounded-full text-xs font-medium shadow-sm">Empathetic Leadership</span>
-                        <span class="px-3 py-1.5 bg-white border border-surface-200 text-surface-700 rounded-full text-xs font-medium shadow-sm">Agile Problem-Solving</span>
-                        <span class="px-3 py-1.5 bg-white border border-surface-200 text-surface-700 rounded-full text-xs font-medium shadow-sm">Conflict Resolution</span>
-                        <span class="px-3 py-1.5 bg-brand-50 border border-brand-200 text-brand-700 rounded-full text-xs font-bold shadow-sm">Creative Writing & Strategy</span>
-                        <span class="px-3 py-1.5 bg-white border border-surface-200 text-surface-700 rounded-full text-xs font-medium shadow-sm">Public Speaking</span>
-                        <span class="px-3 py-1.5 bg-white border border-surface-200 text-surface-700 rounded-full text-xs font-medium shadow-sm">Technical Comm.</span>
-                        <span class="px-3 py-1.5 bg-white border border-surface-200 text-surface-700 rounded-full text-xs font-medium shadow-sm">Cognitive Flexibility</span>
-                    </div>
+                <div class="flex flex-wrap gap-2.5">
+                    <span class="px-4 py-1.5 bg-slate-50 text-slate-700 rounded-full text-sm font-medium border border-slate-200 hover:bg-slate-100 transition-colors">Empathetic Leadership</span>
+                    <span class="px-4 py-1.5 bg-slate-50 text-slate-700 rounded-full text-sm font-medium border border-slate-200 hover:bg-slate-100 transition-colors">Agile Problem-Solving</span>
+                    <span class="px-4 py-1.5 bg-slate-50 text-slate-700 rounded-full text-sm font-medium border border-slate-200 hover:bg-slate-100 transition-colors">Conflict Resolution</span>
+                    <span class="px-4 py-1.5 bg-slate-50 text-slate-700 rounded-full text-sm font-medium border border-slate-200 hover:bg-slate-100 transition-colors">Editorial Strategy</span>
+                    <span class="px-4 py-1.5 bg-slate-50 text-slate-700 rounded-full text-sm font-medium border border-slate-200 hover:bg-slate-100 transition-colors">Public Speaking</span>
+                    <span class="px-4 py-1.5 bg-slate-50 text-slate-700 rounded-full text-sm font-medium border border-slate-200 hover:bg-slate-100 transition-colors">Technical Communication</span>
+                    <span class="px-4 py-1.5 bg-slate-50 text-slate-700 rounded-full text-sm font-medium border border-slate-200 hover:bg-slate-100 transition-colors">Cognitive Flexibility</span>
                 </div>
-
             </div>
         </div>
     </section>
 
-    <!-- Experience Timeline -->
-    <section id="journey" class="py-24 bg-white relative z-10">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="mb-16 text-center">
-                <h2 class="text-xs font-bold tracking-widest text-brand-600 uppercase mb-2">Career Path</h2>
-                <h3 class="text-3xl md:text-4xl font-heading font-extrabold text-surface-900">Professional Journey</h3>
+    <!-- Experience Timeline Section -->
+    <section id="experience" class="py-20 bg-white relative">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-16">
+                <h2 class="text-3xl md:text-4xl font-heading font-extrabold text-slate-900">Career Journey.</h2>
+                <p class="text-slate-500 mt-2 text-lg">My professional track record across institutions.</p>
             </div>
 
-            <div class="relative border-l border-surface-200 ml-4 md:ml-6 pl-8 md:pl-10 space-y-12">
+            <div class="timeline-line relative space-y-12 pb-8">
                 
                 <!-- Job 1 -->
-                <div class="relative group">
-                    <div class="absolute -left-[43px] md:-left-[51px] top-1 h-5 w-5 rounded-full border-4 border-white bg-brand-500 shadow-sm group-hover:scale-125 transition-transform duration-300 z-10"></div>
-                    
-                    <div class="flex flex-col md:flex-row md:items-baseline md:justify-between mb-2">
-                        <h4 class="text-xl font-heading font-bold text-surface-900 group-hover:text-brand-600 transition-colors">Islamic Teacher & PRO</h4>
-                        <span class="inline-block px-3 py-1 bg-surface-100 text-surface-600 text-xs font-semibold rounded-full mt-2 md:mt-0">Mar 2026 – Present</span>
+                <div class="relative flex items-start group">
+                    <div class="absolute left-4 sm:left-5 w-4 h-4 rounded-full bg-brand-500 border-4 border-white shadow ring-1 ring-brand-100 mt-1.5 z-10 group-hover:scale-125 transition-transform"></div>
+                    <div class="ml-12 sm:ml-16 w-full">
+                        <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-2">
+                            <h3 class="text-2xl font-heading font-extrabold text-gradient bg-gradient-to-r from-brand-700 to-indigo-600">Islamic Teacher & PRO</h3>
+                            <span class="inline-block mt-2 sm:mt-0 px-3 py-1 bg-brand-50 text-brand-700 text-xs font-bold tracking-wider uppercase rounded-md">March 2026 – Present</span>
+                        </div>
+                        <p class="text-slate-500 font-medium mb-4">Nibrasul Islam Secondary Madrasa, Mokeri</p>
+                        <ul class="space-y-2 text-slate-600 text-sm md:text-base leading-relaxed">
+                            <li class="flex items-start"><span class="mr-2 text-brand-400 mt-0.5">•</span> Deliver comprehensive, curriculum-based Islamic instruction tailored to diverse learning needs.</li>
+                            <li class="flex items-start"><span class="mr-2 text-brand-400 mt-0.5">•</span> Facilitate a values-oriented environment encouraging active discussion and moral reflection.</li>
+                            <li class="flex items-start"><span class="mr-2 text-brand-400 mt-0.5">•</span> Manage the institution's official social media presence, curating engaging digital community content.</li>
+                        </ul>
                     </div>
-                    <p class="text-sm font-semibold text-brand-600 mb-4">Nibrasul Islam Secondary Madrasa, Mokeri</p>
-                    
-                    <ul class="list-none space-y-2 text-surface-600 text-sm print-text-sm">
-                        <li class="relative pl-5 before:content-[''] before:absolute before:left-0 before:top-2 before:w-1.5 before:h-1.5 before:bg-surface-300 before:rounded-full">Deliver comprehensive, curriculum-based Islamic instruction, adapting teaching methodologies.</li>
-                        <li class="relative pl-5 before:content-[''] before:absolute before:left-0 before:top-2 before:w-1.5 before:h-1.5 before:bg-surface-300 before:rounded-full">Facilitate a values-oriented classroom environment encouraging active discussion and moral reflection.</li>
-                        <li class="relative pl-5 before:content-[''] before:absolute before:left-0 before:top-2 before:w-1.5 before:h-1.5 before:bg-surface-300 before:rounded-full">Manage the institution's official social media presence, curating engaging digital content for the community.</li>
-                    </ul>
                 </div>
 
                 <!-- Job 2 -->
-                <div class="relative group">
-                    <div class="absolute -left-[43px] md:-left-[51px] top-1 h-5 w-5 rounded-full border-4 border-white bg-surface-300 group-hover:bg-brand-400 group-hover:scale-125 transition-all duration-300 z-10"></div>
-                    
-                    <div class="flex flex-col md:flex-row md:items-baseline md:justify-between mb-2">
-                        <h4 class="text-xl font-heading font-bold text-surface-900 group-hover:text-brand-600 transition-colors">Teacher & Technical Assistant</h4>
-                        <span class="inline-block px-3 py-1 bg-surface-100 text-surface-600 text-xs font-semibold rounded-full mt-2 md:mt-0">Jun 2025 – Mar 2026</span>
+                <div class="relative flex items-start group">
+                    <div class="absolute left-4 sm:left-5 w-4 h-4 rounded-full bg-slate-300 border-4 border-white shadow ring-1 ring-slate-100 mt-1.5 z-10 group-hover:bg-purple-500 group-hover:ring-purple-100 transition-colors"></div>
+                    <div class="ml-12 sm:ml-16 w-full">
+                        <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-2">
+                            <h3 class="text-2xl font-heading font-extrabold text-slate-800">Teacher & Technical Assistant</h3>
+                            <span class="inline-block mt-2 sm:mt-0 px-3 py-1 bg-slate-100 text-slate-600 text-xs font-bold tracking-wider uppercase rounded-md">June 2025 – March 2026</span>
+                        </div>
+                        <p class="text-slate-500 font-medium mb-4">Hidayathul Islam Higher Secondary Madrasa, Orkkatteri</p>
+                        <ul class="space-y-2 text-slate-600 text-sm md:text-base leading-relaxed">
+                            <li class="flex items-start"><span class="mr-2 text-slate-300 mt-0.5">•</span> Spearheaded a complete institutional migration to digital records, improving operational speed.</li>
+                            <li class="flex items-start"><span class="mr-2 text-slate-300 mt-0.5">•</span> Developed a custom online data management and exam results tracking system to streamline grading.</li>
+                            <li class="flex items-start"><span class="mr-2 text-slate-300 mt-0.5">•</span> Coordinated schedules, managed internal communications, and tracked institutional progress parameters.</li>
+                        </ul>
                     </div>
-                    <p class="text-sm font-semibold text-brand-600 mb-4">Hidayathul Islam Higher Secondary Madrasa, Orkkatteri</p>
-                    
-                    <ul class="list-none space-y-2 text-surface-600 text-sm print-text-sm">
-                        <li class="relative pl-5 before:content-[''] before:absolute before:left-0 before:top-2 before:w-1.5 before:h-1.5 before:bg-surface-300 before:rounded-full">Spearheaded a complete institutional migration to digital records, improving data entry accuracy and speed.</li>
-                        <li class="relative pl-5 before:content-[''] before:absolute before:left-0 before:top-2 before:w-1.5 before:h-1.5 before:bg-surface-300 before:rounded-full">Developed a custom online data management and exam results tracking system to streamline grading.</li>
-                        <li class="relative pl-5 before:content-[''] before:absolute before:left-0 before:top-2 before:w-1.5 before:h-1.5 before:bg-surface-300 before:rounded-full">Coordinated schedules, managed internal communications, and tracked institutional progress.</li>
-                    </ul>
                 </div>
 
                 <!-- Job 3 -->
-                <div class="relative group">
-                    <div class="absolute -left-[43px] md:-left-[51px] top-1 h-5 w-5 rounded-full border-4 border-white bg-surface-300 group-hover:bg-brand-400 group-hover:scale-125 transition-all duration-300 z-10"></div>
-                    
-                    <div class="flex flex-col md:flex-row md:items-baseline md:justify-between mb-2">
-                        <h4 class="text-xl font-heading font-bold text-surface-900 group-hover:text-brand-600 transition-colors">Accounting Trainee</h4>
-                        <span class="inline-block px-3 py-1 bg-surface-100 text-surface-600 text-xs font-semibold rounded-full mt-2 md:mt-0">Dec 2025 – Mar 2026</span>
+                <div class="relative flex items-start group">
+                    <div class="absolute left-4 sm:left-5 w-4 h-4 rounded-full bg-slate-300 border-4 border-white shadow ring-1 ring-slate-100 mt-1.5 z-10 group-hover:bg-pink-500 group-hover:ring-pink-100 transition-colors"></div>
+                    <div class="ml-12 sm:ml-16 w-full">
+                        <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-2">
+                            <h3 class="text-2xl font-heading font-extrabold text-slate-800">Accounting Trainee</h3>
+                            <span class="inline-block mt-2 sm:mt-0 px-3 py-1 bg-slate-100 text-slate-600 text-xs font-bold tracking-wider uppercase rounded-md">Dec 2025 – March 2026</span>
+                        </div>
+                        <p class="text-slate-500 font-medium mb-4">Al Ameen Accounting Services, Kuttiady</p>
+                        <ul class="space-y-2 text-slate-600 text-sm md:text-base leading-relaxed">
+                            <li class="flex items-start"><span class="mr-2 text-slate-300 mt-0.5">•</span> Maintained flawless day-to-day financial records utilizing professional Tally software and Microsoft Excel.</li>
+                            <li class="flex items-start"><span class="mr-2 text-slate-300 mt-0.5">•</span> Applied fundamental accounting principles to track assets, liabilities, and balance entries.</li>
+                        </ul>
                     </div>
-                    <p class="text-sm font-semibold text-brand-600 mb-4">Al Ameen Accounting Services, Kuttiady</p>
-                    
-                    <ul class="list-none space-y-2 text-surface-600 text-sm print-text-sm">
-                        <li class="relative pl-5 before:content-[''] before:absolute before:left-0 before:top-2 before:w-1.5 before:h-1.5 before:bg-surface-300 before:rounded-full">Maintained flawless day-to-day financial records and ledgers utilizing Tally Prime and Excel.</li>
-                        <li class="relative pl-5 before:content-[''] before:absolute before:left-0 before:top-2 before:w-1.5 before:h-1.5 before:bg-surface-300 before:rounded-full">Applied fundamental accounting principles to track assets, liabilities, and balance entries.</li>
-                    </ul>
                 </div>
 
-                <!-- Earlier Roles Compact -->
-                <div class="relative pt-6 border-t border-dashed border-surface-200">
-                     <div class="absolute -left-[43px] md:-left-[51px] top-8 h-5 w-5 rounded-full border-4 border-white bg-surface-200 z-10"></div>
-                     <h4 class="text-sm font-bold text-surface-500 uppercase tracking-wider mb-6">Earlier Roles</h4>
-                     
-                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <div class="p-4 bg-surface-50 rounded-2xl border border-surface-100">
-                            <h5 class="font-bold text-surface-800 text-sm">Travel Consultant & E-Seva Asst.</h5>
-                            <p class="text-xs text-brand-600 mb-2">Malabar Travels | 2025</p>
-                            <p class="text-xs text-surface-600">Managed business accounts, public e-services data entry, and coordinated travel logistics.</p>
+                <!-- Older Roles Compact Grid -->
+                <div class="relative flex items-start pt-6">
+                    <div class="ml-12 sm:ml-16 w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                        <div class="bg-slate-50 p-5 rounded-2xl border border-slate-100">
+                            <h4 class="font-heading font-bold text-slate-900 mb-1">Travel Consultant & E-Seva Asst.</h4>
+                            <p class="text-xs text-brand-600 font-semibold mb-2">Malabar Travels | 2025</p>
+                            <p class="text-xs text-slate-500 leading-relaxed">Managed accounts, data entry for e-services, passport applications, and travel logistics.</p>
                         </div>
-                        <div class="p-4 bg-surface-50 rounded-2xl border border-surface-100">
-                            <h5 class="font-bold text-surface-800 text-sm">Sub Editor & Digital Asst.</h5>
-                            <p class="text-xs text-brand-600 mb-2">Campus Journal | 2023–2025</p>
-                            <p class="text-xs text-surface-600">Managed content workflows, digital platform operations, and edited critical documentation.</p>
+                        <div class="bg-slate-50 p-5 rounded-2xl border border-slate-100">
+                            <h4 class="font-heading font-bold text-slate-900 mb-1">Sub Editor & Digital Assistant</h4>
+                            <p class="text-xs text-purple-600 font-semibold mb-2">Campus Journal | 2023 - 2025</p>
+                            <p class="text-xs text-slate-500 leading-relaxed">Managed content workflows, platform operations, external contributors, and editing.</p>
                         </div>
-                        <div class="p-4 bg-surface-50 rounded-2xl border border-surface-100 sm:col-span-2">
-                            <h5 class="font-bold text-surface-800 text-sm">College Union Secretary</h5>
-                            <p class="text-xs text-brand-600 mb-2">MTM Wafy College | 2022–2023</p>
-                            <p class="text-xs text-surface-600">Directed administrative functions of the student body, executing diverse initiatives and streamlining communications.</p>
+                        <div class="bg-slate-50 p-5 rounded-2xl border border-slate-100 md:col-span-2 lg:col-span-1">
+                            <h4 class="font-heading font-bold text-slate-900 mb-1">College Union Secretary</h4>
+                            <p class="text-xs text-pink-600 font-semibold mb-2">MTM Wafy College | 2022 - 2023</p>
+                            <p class="text-xs text-slate-500 leading-relaxed">Directed administrative functions, student initiatives, and cross-committee communication.</p>
                         </div>
-                     </div>
+                    </div>
                 </div>
 
             </div>
         </div>
     </section>
 
-    <!-- Achievements & Projects Section -->
-    <section id="achievements" class="py-24 bg-surface-900 text-white relative z-10 overflow-hidden">
-        <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-600 rounded-full filter blur-[120px] opacity-20 no-print"></div>
-        <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-purple-600 rounded-full filter blur-[120px] opacity-20 no-print"></div>
-        
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="mb-16 md:flex justify-between items-end">
-                <div>
-                    <h2 class="text-xs font-bold tracking-widest text-brand-400 uppercase mb-2">Portfolio Showcase</h2>
-                    <h3 class="text-3xl md:text-4xl font-heading font-extrabold text-white">Achievements & Projects</h3>
-                </div>
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-slate-50 border-t border-slate-100">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-12">
+                <h2 class="text-3xl md:text-4xl font-heading font-extrabold text-slate-900">Featured Developments.</h2>
             </div>
 
-            <!-- Bento-style Achievements Layout -->
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-12">
-                <!-- Highlight Achievement (Span 2) -->
-                <div class="lg:col-span-2 bg-white/5 border border-white/10 rounded-3xl p-8 backdrop-blur-md relative overflow-hidden group">
-                    <div class="absolute right-0 top-0 opacity-10 transform translate-x-4 -translate-y-4 group-hover:scale-110 transition-transform duration-500">
-                        <i data-lucide="medal" class="w-48 h-48 text-brand-300"></i>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Project 1 -->
+                <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm hover:shadow-xl hover:border-brand-200 transition-all duration-300 group">
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="p-3 bg-brand-50 w-14 h-14 rounded-2xl text-brand-600 flex items-center justify-center group-hover:bg-brand-600 group-hover:text-white transition-colors">
+                            <i data-lucide="monitor" class="w-7 h-7"></i>
+                        </div>
+                        <span class="text-xs font-bold tracking-widest uppercase text-slate-400">Web App</span>
                     </div>
-                    <div class="relative z-10">
-                        <span class="px-3 py-1 bg-brand-500/20 text-brand-300 text-xs font-bold rounded-full mb-4 inline-block border border-brand-500/30">Top Tier Academic Excellence</span>
-                        <h3 class="text-2xl md:text-3xl font-heading font-bold text-white mb-3">All Kerala 10th Rank | Wafy PG</h3>
-                        <p class="text-surface-300 text-sm md:text-base leading-relaxed max-w-lg">
-                            Secured the 10th rank statewide in the highly prestigious Master's in Islamic Theology. Successfully completed the rigorous 8-year theological curriculum (2 Preparatory + 4 UG + 2 PG) in just 7 years via an accelerated integrated degree track.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Kala Prathibha -->
-                <div class="bg-gradient-to-br from-yellow-500/20 to-orange-500/5 border border-yellow-500/20 rounded-3xl p-8 backdrop-blur-md">
-                    <div class="w-12 h-12 bg-yellow-500/20 text-yellow-400 rounded-2xl flex items-center justify-center mb-5">
-                        <i data-lucide="crown" class="w-6 h-6"></i>
-                    </div>
-                    <h3 class="text-xl font-heading font-bold text-white mb-2">'Kala Prathibha'</h3>
-                    <p class="text-surface-300 text-sm leading-relaxed">
-                        Awarded the prestigious 'Kala Prathibha' (Overall Arts Champion) title consecutively in all college arts fests during my degree period, recognizing multi-disciplinary creative talent.
+                    <h3 class="text-2xl font-heading font-bold text-slate-900 mb-2">Online Result Portal</h3>
+                    <p class="text-sm font-semibold text-brand-600 mb-4">HIM Orkkatteri</p>
+                    <p class="text-slate-600 leading-relaxed">
+                        Developed and deployed a custom online data management and exam results tracking system tailored for institutional evaluation, enabling streamlined grading processes and secure digital record-keeping.
                     </p>
                 </div>
 
-                <!-- Strategist Role -->
-                <div class="bg-white/5 border border-white/10 rounded-3xl p-8 backdrop-blur-md">
-                    <div class="w-12 h-12 bg-white/10 text-white rounded-2xl flex items-center justify-center mb-5">
-                        <i data-lucide="mic" class="w-6 h-6"></i>
+                <!-- Project 2 -->
+                <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm hover:shadow-xl hover:border-purple-200 transition-all duration-300 group">
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="p-3 bg-purple-50 w-14 h-14 rounded-2xl text-purple-600 flex items-center justify-center group-hover:bg-purple-600 group-hover:text-white transition-colors">
+                            <i data-lucide="book-open-check" class="w-7 h-7"></i>
+                        </div>
+                        <span class="text-xs font-bold tracking-widest uppercase text-slate-400">Curriculum</span>
                     </div>
-                    <h3 class="text-xl font-heading font-bold text-white mb-1">Content Strategist</h3>
-                    <p class="text-brand-400 text-xs font-semibold mb-3">13th State Wafy Arts Fest & Convocation</p>
-                    <p class="text-surface-300 text-sm leading-relaxed">
-                        Spearheaded the content strategy, thematic planning, and creative direction for a massive state-level educational and cultural conference.
+                    <h3 class="text-2xl font-heading font-bold text-slate-900 mb-2">Arabic Curriculum E-Learning</h3>
+                    <p class="text-sm font-semibold text-purple-600 mb-4">Alwan Value School</p>
+                    <p class="text-slate-600 leading-relaxed">
+                        Designed a comprehensive Arabic language curriculum and authored specialized online learning materials focused on engaging primary students and fostering highly effective early language acquisition.
                     </p>
                 </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Achievements Section -->
+    <section id="achievements" class="py-20 bg-white border-t border-slate-100">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-heading font-extrabold text-slate-900">Honors & Milestones.</h2>
+                <div class="w-16 h-1.5 bg-gradient-to-r from-brand-500 to-purple-500 mx-auto rounded-full mt-6"></div>
+            </div>
 
-                <!-- State First -->
-                <div class="bg-white/5 border border-white/10 rounded-3xl p-8 backdrop-blur-md">
-                    <div class="w-12 h-12 bg-brand-500/20 text-brand-400 rounded-2xl flex items-center justify-center mb-5">
-                        <i data-lucide="award" class="w-6 h-6"></i>
+            <div class="space-y-5">
+                <div class="glass-card p-6 md:p-8 rounded-3xl flex flex-col md:flex-row gap-6 items-start hover:-translate-y-1 transition-transform border border-brand-100">
+                    <div class="p-4 bg-brand-50 text-brand-600 rounded-2xl shrink-0">
+                        <i data-lucide="medal" class="w-8 h-8"></i>
                     </div>
-                    <h3 class="text-xl font-heading font-bold text-white mb-2">State First Prize Winner</h3>
-                    <p class="text-surface-300 text-sm leading-relaxed">
-                        Secured 1st Prize at the state level Wafy Fest in competitive creative categories: <strong>Malayalam Report Writing</strong>, <strong>Brochure Making</strong>, and <strong>Kaviyarangu (Poetry)</strong>.
-                    </p>
-                </div>
-
-                <!-- Digital Projects (Span 1 on large, span 2 on med) -->
-                <div class="md:col-span-2 lg:col-span-1 bg-white/5 border border-white/10 rounded-3xl p-8 backdrop-blur-md">
-                    <h3 class="text-xl font-heading font-bold text-white mb-5 border-b border-white/10 pb-4">Digital Implementations</h3>
-                    
-                    <div class="mb-5">
-                        <h4 class="font-bold text-brand-300 text-sm mb-1"><i data-lucide="monitor" class="w-3.5 h-3.5 inline mr-1 -mt-0.5"></i> Online Result Portal</h4>
-                        <p class="text-surface-400 text-xs">Developed and deployed a custom online data management and exam tracking system for HIM Orkkatteri grading.</p>
-                    </div>
-                    
                     <div>
-                        <h4 class="font-bold text-brand-300 text-sm mb-1"><i data-lucide="book-open-check" class="w-3.5 h-3.5 inline mr-1 -mt-0.5"></i> Arabic E-Learning</h4>
-                        <p class="text-surface-400 text-xs">Designed curriculum and specialized online learning materials for primary students at Alwan Value School.</p>
+                        <h3 class="font-heading font-bold text-slate-900 text-xl md:text-2xl mb-2">All Kerala 10th Rank | Wafy Postgraduate Course</h3>
+                        <p class="text-slate-600 leading-relaxed">Secured the 10th rank statewide in the prestigious Master's in Islamic Theology. Successfully completed the rigorous 8-year theological curriculum (2 Preparatory + 4 UG + 2 PG) in just 7 years via an accelerated integrated degree track.</p>
+                    </div>
+                </div>
+
+                <div class="glass-card p-6 md:p-8 rounded-3xl flex flex-col md:flex-row gap-6 items-start hover:-translate-y-1 transition-transform">
+                    <div class="p-4 bg-yellow-50 text-yellow-600 rounded-2xl shrink-0">
+                        <i data-lucide="crown" class="w-8 h-8"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-heading font-bold text-slate-900 text-xl md:text-2xl mb-2">'Kala Prathibha' (Overall Arts Champion)</h3>
+                        <p class="text-slate-600 leading-relaxed">Awarded the prestigious 'Kala Prathibha' title consecutively in all college arts fests during my undergraduate degree period, recognizing exceptional multi-disciplinary artistic and creative talent.</p>
+                    </div>
+                </div>
+
+                <div class="glass-card p-6 md:p-8 rounded-3xl flex flex-col md:flex-row gap-6 items-start hover:-translate-y-1 transition-transform">
+                    <div class="p-4 bg-purple-50 text-purple-600 rounded-2xl shrink-0">
+                        <i data-lucide="trophy" class="w-8 h-8"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-heading font-bold text-slate-900 text-xl md:text-2xl mb-2">State First Prize Winner | State Wafy Fest</h3>
+                        <p class="text-slate-600 leading-relaxed">Secured 1st Prize at the highly competitive state level across multiple creative disciplines, including <span class="font-semibold text-slate-800">Malayalam Report Writing</span>, <span class="font-semibold text-slate-800">Brochure Design</span>, and the <span class="font-semibold text-slate-800">Kaviyarangu</span> stage program.</p>
+                    </div>
+                </div>
+
+                <div class="glass-card p-6 md:p-8 rounded-3xl flex flex-col md:flex-row gap-6 items-start hover:-translate-y-1 transition-transform">
+                    <div class="p-4 bg-pink-50 text-pink-600 rounded-2xl shrink-0">
+                        <i data-lucide="mic-2" class="w-8 h-8"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-heading font-bold text-slate-900 text-xl md:text-2xl mb-1">Content Strategist</h3>
+                        <p class="text-sm font-bold text-pink-600 uppercase tracking-widest mb-3">13th State Wafy Arts Fest & Convocation</p>
+                        <p class="text-slate-600 leading-relaxed">Spearheaded the comprehensive content strategy, thematic planning, and overarching creative direction for a massive state-level educational and cultural conference.</p>
                     </div>
                 </div>
             </div>
@@ -472,109 +448,78 @@
     </section>
 
     <!-- Education Section -->
-    <section id="education" class="py-24 bg-surface-50">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-xs font-bold tracking-widest text-brand-600 uppercase mb-2">Academic Foundation</h2>
-                <h3 class="text-3xl md:text-4xl font-heading font-extrabold text-surface-900">Education & Diplomas</h3>
+    <section id="education" class="py-20 bg-slate-900 text-slate-300 relative overflow-hidden">
+        <!-- Dark ambient glow -->
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-brand-900 rounded-full mix-blend-screen filter blur-[100px] opacity-50 pointer-events-none"></div>
+
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="mb-16 md:text-center">
+                <h2 class="text-3xl md:text-4xl font-heading font-extrabold text-white">Academic Credentials.</h2>
             </div>
 
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
                 <!-- Academic Degrees -->
                 <div>
-                    <h3 class="text-xl font-heading font-bold text-surface-800 mb-8 flex items-center">
-                        <i data-lucide="graduation-cap" class="w-6 h-6 mr-3 text-brand-600"></i> Degree Programs
+                    <h3 class="text-xl font-heading font-bold text-white mb-8 flex items-center border-b border-slate-700 pb-4">
+                        <i data-lucide="graduation-cap" class="w-6 h-6 mr-3 text-brand-400"></i> Higher Education
                     </h3>
-                    
-                    <div class="space-y-4">
-                        <!-- Ed Card: B.Ed -->
-                        <div class="bg-white p-6 rounded-2xl border border-surface-200 shadow-sm flex flex-col sm:flex-row gap-4 justify-between items-start sm:items-center hover:border-brand-300 transition-colors">
-                            <div>
-                                <h4 class="font-bold text-surface-900">B.Ed. in English (Ongoing)</h4>
-                                <p class="text-sm text-surface-500">JJ College of Education, Ammapettai</p>
-                            </div>
-                            <span class="px-3 py-1 bg-brand-50 text-brand-600 text-xs font-bold rounded-lg whitespace-nowrap">Expected 2027</span>
+                    <div class="space-y-6">
+                        <div class="bg-slate-800/50 backdrop-blur border border-slate-700 p-6 rounded-2xl">
+                            <span class="text-xs font-bold text-brand-400 tracking-wider block mb-1">EXPECTED 2027</span>
+                            <h4 class="font-heading font-bold text-white text-lg">B.Ed. in English (Ongoing)</h4>
+                            <p class="text-sm text-slate-400">JJ College of Education, Ammapettai</p>
                         </div>
-
-                        <!-- Ed Card: M.A. Arabic -->
-                        <div class="bg-white p-6 rounded-2xl border border-surface-200 shadow-sm flex flex-col sm:flex-row gap-4 justify-between items-start sm:items-center hover:border-brand-300 transition-colors">
-                            <div>
-                                <h4 class="font-bold text-surface-900">M.A. in Arabic</h4>
-                                <p class="text-sm text-surface-500">IGNOU</p>
-                            </div>
-                            <span class="px-3 py-1 bg-surface-100 text-surface-600 text-xs font-bold rounded-lg whitespace-nowrap">2024 - 2026</span>
+                        <div class="bg-slate-800/50 backdrop-blur border border-slate-700 p-6 rounded-2xl">
+                            <span class="text-xs font-bold text-purple-400 tracking-wider block mb-1">2024 - 2026</span>
+                            <h4 class="font-heading font-bold text-white text-lg">M.A. in Arabic</h4>
+                            <p class="text-sm text-slate-400">Indira Gandhi National Open University (IGNOU)</p>
                         </div>
-
-                        <!-- Ed Card: Wafy Master's -->
-                        <div class="bg-white p-6 rounded-2xl border border-brand-200 shadow-md ring-1 ring-brand-50 relative overflow-hidden">
-                            <div class="absolute top-0 right-0 w-2 h-full bg-brand-500"></div>
-                            <div class="flex flex-col sm:flex-row gap-4 justify-between items-start mb-4">
-                                <div>
-                                    <h4 class="font-bold text-surface-900 text-lg">Masters in Islamic Theology (Wafy)</h4>
-                                    <p class="text-sm font-medium text-brand-600">Wafy Campus, Kalikavu</p>
-                                </div>
-                                <span class="px-3 py-1 bg-surface-100 text-surface-600 text-xs font-bold rounded-lg whitespace-nowrap">2023 - 2025</span>
-                            </div>
+                        <div class="bg-gradient-to-br from-slate-800 to-brand-900/40 backdrop-blur border border-brand-500/30 p-6 rounded-2xl relative overflow-hidden">
+                            <div class="absolute top-0 right-0 p-4 opacity-10 pointer-events-none"><i data-lucide="award" class="w-24 h-24 text-brand-300"></i></div>
+                            <span class="text-xs font-bold text-brand-300 tracking-wider block mb-1 relative z-10">2023 - 2025</span>
+                            <h4 class="font-heading font-bold text-white text-lg relative z-10">Masters in Islamic Theology (Wafy)</h4>
+                            <p class="text-sm text-slate-300 mb-4 relative z-10">Wafy Campus, Kalikavu</p>
                             
-                            <div class="bg-surface-50 border border-surface-100 rounded-xl p-4">
-                                <div class="flex items-center gap-2 mb-2">
-                                    <i data-lucide="scroll-text" class="w-4 h-4 text-brand-600"></i>
-                                    <p class="text-xs font-bold text-surface-800 uppercase tracking-wide">PG Dissertation</p>
-                                </div>
-                                <p class="text-sm text-surface-600 italic leading-relaxed">
+                            <div class="bg-slate-900/60 rounded-xl p-4 relative z-10 border border-slate-700/50">
+                                <p class="text-xs font-bold text-brand-400 uppercase tracking-widest mb-2 flex items-center"><i data-lucide="scroll-text" class="w-3.5 h-3.5 mr-2"></i> PG Dissertation</p>
+                                <p class="text-sm text-slate-200 italic leading-relaxed">
                                     "An Analytical Study on Sheikh Ahmad Sirhindi's Contributions in Promoting Ahlu-Sunnah and Preventing Spread of Shi'ism in India."
                                 </p>
                             </div>
                         </div>
-
-                        <!-- Ed Card: B.A. English -->
-                        <div class="bg-white p-6 rounded-2xl border border-surface-200 shadow-sm flex flex-col sm:flex-row gap-4 justify-between items-start sm:items-center hover:border-brand-300 transition-colors">
-                            <div>
-                                <h4 class="font-bold text-surface-900">B.A. in English Lang & Lit.</h4>
-                                <p class="text-sm text-surface-500">University of Calicut</p>
-                            </div>
-                            <span class="px-3 py-1 bg-surface-100 text-surface-600 text-xs font-bold rounded-lg whitespace-nowrap">2021 - 2024</span>
+                        <div class="bg-slate-800/50 backdrop-blur border border-slate-700 p-6 rounded-2xl">
+                            <span class="text-xs font-bold text-slate-400 tracking-wider block mb-1">2021 - 2024</span>
+                            <h4 class="font-heading font-bold text-white text-lg">B.A. in English Lang & Lit.</h4>
+                            <p class="text-sm text-slate-400">University of Calicut</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Diplomas & Early Ed -->
+                <!-- Certifications -->
                 <div>
-                    <h3 class="text-xl font-heading font-bold text-surface-800 mb-8 flex items-center mt-4 lg:mt-0">
-                        <i data-lucide="file-badge" class="w-6 h-6 mr-3 text-brand-600"></i> Diplomas & Foundation
+                    <h3 class="text-xl font-heading font-bold text-white mb-8 flex items-center border-b border-slate-700 pb-4">
+                        <i data-lucide="file-badge" class="w-6 h-6 mr-3 text-brand-400"></i> Diplomas & Foundation
                     </h3>
-                    
-                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-4">
-                        <!-- Cert Card -->
-                        <div class="bg-white p-5 rounded-2xl border border-surface-200 hover:border-brand-300 hover:-translate-y-1 transition-all shadow-sm">
-                            <div class="w-10 h-10 bg-surface-100 rounded-xl text-surface-600 flex items-center justify-center mb-3"><i data-lucide="scroll" class="w-5 h-5"></i></div>
-                            <h4 class="font-bold text-surface-900 text-sm">Aliya Certificate (UG)</h4>
-                            <p class="text-xs text-surface-500 mt-1 mb-3">Islamic & Arabic Studies</p>
-                            <span class="text-[10px] font-bold text-brand-600 bg-brand-50 px-2 py-1 rounded">2020 - 2023</span>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="bg-slate-800/40 p-5 rounded-2xl border border-slate-700/50">
+                            <h4 class="font-heading font-bold text-white mb-1">Aliya Certificate</h4>
+                            <p class="text-xs text-brand-400 mb-2">Islamic & Arabic Studies</p>
+                            <p class="text-xs text-slate-400">MTM College • 2020-23</p>
                         </div>
-
-                        <!-- Cert Card -->
-                        <div class="bg-white p-5 rounded-2xl border border-surface-200 hover:border-brand-300 hover:-translate-y-1 transition-all shadow-sm">
-                            <div class="w-10 h-10 bg-surface-100 rounded-xl text-surface-600 flex items-center justify-center mb-3"><i data-lucide="languages" class="w-5 h-5"></i></div>
-                            <h4 class="font-bold text-surface-900 text-sm">Diploma: Functional Arabic</h4>
-                            <p class="text-xs text-surface-500 mt-1 mb-3">NCPUL</p>
-                            <span class="text-[10px] font-bold text-brand-600 bg-brand-50 px-2 py-1 rounded">2023 - 2025</span>
+                        <div class="bg-slate-800/40 p-5 rounded-2xl border border-slate-700/50">
+                            <h4 class="font-heading font-bold text-white mb-1">Diploma: Arabic</h4>
+                            <p class="text-xs text-brand-400 mb-2">Functional Proficiency</p>
+                            <p class="text-xs text-slate-400">NCPUL • 2023-25</p>
                         </div>
-
-                        <!-- Cert Card -->
-                        <div class="bg-white p-5 rounded-2xl border border-surface-200 hover:border-brand-300 hover:-translate-y-1 transition-all shadow-sm">
-                            <div class="w-10 h-10 bg-surface-100 rounded-xl text-surface-600 flex items-center justify-center mb-3"><i data-lucide="languages" class="w-5 h-5"></i></div>
-                            <h4 class="font-bold text-surface-900 text-sm">Diploma: Urdu Language</h4>
-                            <p class="text-xs text-surface-500 mt-1 mb-3">NCPUL</p>
-                            <span class="text-[10px] font-bold text-brand-600 bg-brand-50 px-2 py-1 rounded">2023 - 2024</span>
+                        <div class="bg-slate-800/40 p-5 rounded-2xl border border-slate-700/50">
+                            <h4 class="font-heading font-bold text-white mb-1">Diploma: Urdu</h4>
+                            <p class="text-xs text-brand-400 mb-2">Language Proficiency</p>
+                            <p class="text-xs text-slate-400">NCPUL • 2023-24</p>
                         </div>
-
-                         <!-- Cert Card -->
-                         <div class="bg-white p-5 rounded-2xl border border-surface-200 hover:border-brand-300 hover:-translate-y-1 transition-all shadow-sm">
-                            <div class="w-10 h-10 bg-surface-100 rounded-xl text-surface-600 flex items-center justify-center mb-3"><i data-lucide="building" class="w-5 h-5"></i></div>
-                            <h4 class="font-bold text-surface-900 text-sm">HSE Commerce</h4>
-                            <p class="text-xs text-surface-500 mt-1 mb-3">RVHSS Chokli</p>
-                            <span class="text-[10px] font-bold text-brand-600 bg-brand-50 px-2 py-1 rounded">2018 - 2020</span>
+                        <div class="bg-slate-800/40 p-5 rounded-2xl border border-slate-700/50">
+                            <h4 class="font-heading font-bold text-white mb-1">HSE Commerce</h4>
+                            <p class="text-xs text-brand-400 mb-2">Higher Secondary</p>
+                            <p class="text-xs text-slate-400">RVHSS Chokli • 2018-20</p>
                         </div>
                     </div>
                 </div>
@@ -582,61 +527,65 @@
         </div>
     </section>
 
-    <!-- Interests Section (Minimalist) -->
-    <section class="py-16 bg-white border-t border-surface-200 no-print">
+    <!-- Interests Section -->
+    <section id="interests" class="py-20 bg-slate-50 border-t border-slate-200">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row items-center justify-between gap-8">
-                <div class="md:w-1/3">
-                    <h2 class="text-2xl font-heading font-bold text-surface-900 mb-2">Beyond the Desk.</h2>
-                    <p class="text-sm text-surface-500">My personal pursuits fuel my professional creativity.</p>
+            <div class="mb-12 text-center">
+                <h2 class="text-sm font-bold text-slate-400 tracking-widest uppercase mb-2">Beyond the Resume</h2>
+                <h3 class="text-2xl font-heading font-bold text-slate-900">Intellectual Pursuits</h3>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 lg:gap-6">
+                <div class="bg-white p-6 rounded-3xl border border-slate-100 flex flex-col items-center text-center shadow-sm">
+                    <i data-lucide="globe-2" class="w-8 h-8 text-brand-400 mb-3"></i>
+                    <h4 class="font-bold text-slate-800 text-sm">Global Affairs</h4>
                 </div>
-                <div class="md:w-2/3 flex flex-wrap gap-3 justify-center md:justify-end">
-                    <span class="inline-flex items-center px-4 py-2 rounded-full bg-surface-50 border border-surface-200 text-sm font-medium text-surface-700 hover:bg-white hover:shadow-sm transition-all"><i data-lucide="globe-2" class="w-4 h-4 mr-2 text-brand-500"></i> Global Affairs & Econ</span>
-                    <span class="inline-flex items-center px-4 py-2 rounded-full bg-surface-50 border border-surface-200 text-sm font-medium text-surface-700 hover:bg-white hover:shadow-sm transition-all"><i data-lucide="landmark" class="w-4 h-4 mr-2 text-brand-500"></i> History & Ideologies</span>
-                    <span class="inline-flex items-center px-4 py-2 rounded-full bg-surface-50 border border-surface-200 text-sm font-medium text-surface-700 hover:bg-white hover:shadow-sm transition-all"><i data-lucide="feather" class="w-4 h-4 mr-2 text-brand-500"></i> Poetry & Literature</span>
-                    <span class="inline-flex items-center px-4 py-2 rounded-full bg-surface-50 border border-surface-200 text-sm font-medium text-surface-700 hover:bg-white hover:shadow-sm transition-all"><i data-lucide="plane-takeoff" class="w-4 h-4 mr-2 text-brand-500"></i> Travel Logistics</span>
+                <div class="bg-white p-6 rounded-3xl border border-slate-100 flex flex-col items-center text-center shadow-sm">
+                    <i data-lucide="landmark" class="w-8 h-8 text-purple-400 mb-3"></i>
+                    <h4 class="font-bold text-slate-800 text-sm">History & Ideology</h4>
+                </div>
+                <div class="bg-white p-6 rounded-3xl border border-slate-100 flex flex-col items-center text-center shadow-sm">
+                    <i data-lucide="feather" class="w-8 h-8 text-pink-400 mb-3"></i>
+                    <h4 class="font-bold text-slate-800 text-sm">Literary Arts</h4>
+                </div>
+                <div class="bg-white p-6 rounded-3xl border border-slate-100 flex flex-col items-center text-center shadow-sm">
+                    <i data-lucide="plane-takeoff" class="w-8 h-8 text-slate-400 mb-3"></i>
+                    <h4 class="font-bold text-slate-800 text-sm">Travel Planning</h4>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer / Contact -->
-    <footer id="contact" class="bg-surface-900 text-white py-16 border-t border-surface-800">
+    <footer id="contact" class="bg-white border-t border-slate-200 py-16">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-10">
-                <div class="text-left">
-                    <span class="text-3xl font-heading font-extrabold tracking-tight text-white block mb-2">JUNAID<span class="text-brand-500">.</span></span>
-                    <p class="text-surface-400 text-sm font-medium">Educator | Digital Operations & PRO | Content Strategist</p>
+            <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+                <div class="text-center md:text-left">
+                    <span class="text-3xl font-heading font-extrabold text-slate-900 block mb-2 tracking-tight">JUNAID.</span>
+                    <p class="text-slate-500 font-medium">Educator • Digital Strategist • Editor</p>
+                </div>
+                
+                <div class="flex flex-col sm:flex-row items-center gap-6">
+                    <a href="mailto:abdjunaidkv@gmail.com" class="flex items-center px-6 py-3 bg-brand-50 text-brand-700 rounded-full font-bold hover:bg-brand-600 hover:text-white transition-colors">
+                        <i data-lucide="mail" class="w-5 h-5 mr-2"></i> Email Me
+                    </a>
                     
-                    <!-- Footer Social Links -->
-                    <div class="flex items-center space-x-4 mt-6">
-                        <a href="https://www.linkedin.com/in/junaid-kayakkodi-1789b5291" target="_blank" class="flex items-center justify-center w-10 h-10 rounded-full bg-white/10 hover:bg-[#0a66c2] hover:text-white text-surface-300 transition-all" aria-label="LinkedIn">
-                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                    <div class="flex items-center space-x-4">
+                        <a href="https://www.linkedin.com/in/junaid-kayakkodi-1789b5291" target="_blank" class="w-10 h-10 flex items-center justify-center rounded-full bg-slate-100 text-slate-600 hover:bg-[#0a66c2] hover:text-white transition-colors" aria-label="LinkedIn">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
                         </a>
-                        <a href="https://www.instagram.com/abd_kv" target="_blank" class="flex items-center justify-center w-10 h-10 rounded-full bg-white/10 hover:bg-[#E1306C] hover:text-white text-surface-300 transition-all" aria-label="Instagram">
-                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd"/></svg>
+                        <a href="https://www.instagram.com/abd_kv" target="_blank" class="w-10 h-10 flex items-center justify-center rounded-full bg-slate-100 text-slate-600 hover:bg-[#E1306C] hover:text-white transition-colors" aria-label="Instagram">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd"/></svg>
                         </a>
-                        <a href="https://wa.me/919645555771" target="_blank" class="flex items-center justify-center w-10 h-10 rounded-full bg-white/10 hover:bg-[#25D366] hover:text-white text-surface-300 transition-all" aria-label="WhatsApp">
-                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                        <a href="https://wa.me/919645555771" target="_blank" class="w-10 h-10 flex items-center justify-center rounded-full bg-slate-100 text-slate-600 hover:bg-[#25D366] hover:text-white transition-colors" aria-label="WhatsApp">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
                         </a>
                     </div>
                 </div>
-                
-                <div class="flex flex-col lg:items-end space-y-4 border-t lg:border-t-0 lg:border-l border-surface-800 pt-8 lg:pt-0 lg:pl-10">
-                    <a href="mailto:abdjunaidkv@gmail.com" class="flex items-center text-surface-300 hover:text-white transition-colors group">
-                        <div class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center mr-3 group-hover:bg-brand-600 transition-colors"><i data-lucide="mail" class="w-4 h-4"></i></div>
-                        abdjunaidkv@gmail.com
-                    </a>
-                    <a href="tel:+919645555771" class="flex items-center text-surface-300 hover:text-white transition-colors group">
-                        <div class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center mr-3 group-hover:bg-brand-600 transition-colors"><i data-lucide="phone" class="w-4 h-4"></i></div>
-                        +91 964 5555 771
-                    </a>
-                </div>
             </div>
             
-            <div class="mt-16 pt-8 border-t border-surface-800 flex flex-col md:flex-row justify-between items-center text-sm text-surface-500">
+            <div class="mt-12 text-center md:text-left text-xs text-slate-400 font-medium">
                 <p>&copy; <script>document.write(new Date().getFullYear())</script> Junaid. All rights reserved.</p>
-                <p class="mt-2 md:mt-0 flex items-center"><i data-lucide="map-pin" class="w-3.5 h-3.5 mr-1"></i> Kozhikode, Kerala</p>
             </div>
         </div>
     </footer>
@@ -646,57 +595,26 @@
         lucide.createIcons();
     </script>
 
-    <!-- Google Translate Script (Async, non-blocking) -->
-    <script type="text/javascript">
-        function googleTranslateElementInit() {
-            new google.translate.TranslateElement({
-                pageLanguage: 'en',
-                includedLanguages: 'en,ml,ar',
-                layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-                autoDisplay: false
-            }, 'google_translate_element');
-        }
-    </script>
-    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async defer></script>
-
-    <!-- Comprehensive Content & Privacy Protection Scripts -->
+    <!-- Content & Privacy Protection Scripts -->
     <script>
         // Disable Right Click
-        document.addEventListener('contextmenu', function(e) {
-            e.preventDefault();
-        });
+        document.addEventListener('contextmenu', function(e) { e.preventDefault(); });
 
-        // Disable keyboard shortcuts (Ctrl+C, Ctrl+A, Ctrl+S, Ctrl+U, F12, Ctrl+Shift+I)
+        // Disable keyboard shortcuts
         document.addEventListener('keydown', function(e) {
-            // F12
-            if(e.key === 'F12') {
-                e.preventDefault();
-                return false;
-            }
-            // Ctrl/Cmd shortcuts
+            if(e.key === 'F12') { e.preventDefault(); return false; }
             if (e.ctrlKey || e.metaKey) {
                 const key = e.key.toLowerCase();
-                if (key === 'c' || key === 'a' || key === 's' || key === 'u') {
-                    e.preventDefault();
-                    return false;
-                }
+                if (key === 'c' || key === 'a' || key === 's' || key === 'u') { e.preventDefault(); return false; }
             }
-            // Ctrl+Shift+I / Ctrl+Shift+J / Ctrl+Shift+C
             if ((e.ctrlKey || e.metaKey) && e.shiftKey) {
                 const key = e.key.toLowerCase();
-                if (key === 'i' || key === 'j' || key === 'c') {
-                    e.preventDefault();
-                    return false;
-                }
+                if (key === 'i' || key === 'j' || key === 'c') { e.preventDefault(); return false; }
             }
         });
 
-        // Prevent dragging elements (like images)
-        document.addEventListener('dragstart', function(e) {
-            e.preventDefault();
-        });
-
-        // Prevent standard copy/cut/paste events
+        // Prevent dragging and copying
+        document.addEventListener('dragstart', function(e) { e.preventDefault(); });
         document.addEventListener('copy', function(e) { e.preventDefault(); });
         document.addEventListener('cut', function(e) { e.preventDefault(); });
         document.addEventListener('paste', function(e) { e.preventDefault(); });
